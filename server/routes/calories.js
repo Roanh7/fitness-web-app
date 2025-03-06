@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
-const { verifyToken } = require('./auth');
+const auth = require('./auth');
+const verifyToken = auth.verifyToken;
 
 // Get all calorie entries
 router.get('/', verifyToken, async (req, res) => {

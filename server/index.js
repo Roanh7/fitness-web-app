@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 // Import route handlers
-const authRoutes = require('./routes/auth');
+const authRouter = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const weightRoutes = require('./routes/weights');
 const calorieRoutes = require('./routes/calories');
@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // API routes
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRouter);
 app.use('/api/users', userRoutes);
 app.use('/api/weights', weightRoutes);
 app.use('/api/calories', calorieRoutes);

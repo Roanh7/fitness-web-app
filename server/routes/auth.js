@@ -130,7 +130,6 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-module.exports = {
-  router,
-  verifyToken
-};
+// Export both the router and the verifyToken middleware separately
+module.exports = router;
+module.exports.verifyToken = verifyToken;
